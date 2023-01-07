@@ -24,6 +24,12 @@ def main():
     )
     extracted.to_file("time_folding.py")
 
+    try:
+        import graphviz
+        egraph.write_to_svg("time_folding.svg")
+    except ImportError:
+        print("Package graphviz not available, will not generate e-graph svg")
+
 
 def test_main():
     main()

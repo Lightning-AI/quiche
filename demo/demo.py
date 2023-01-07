@@ -37,3 +37,9 @@ extractor = MinimumCostExtractor()
 
 term = extractor.extract(model, egraph, root, ASTQuicheTree.make_node)
 term.to_file("newton_sqrt_while_1.py")
+
+try:
+    import graphviz
+    egraph.write_to_svg("newton_sqrt.svg")
+except ImportError:
+    print("Package graphviz not available, will not generate e-graph svg")
