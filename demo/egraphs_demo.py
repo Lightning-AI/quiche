@@ -1,4 +1,4 @@
-from quiche import EGraph, MinimumCostExtractor
+from quiche import EGraph, Rule, MinimumCostExtractor
 from quiche.pyast import ASTQuicheTree, ASTConstantFolding, ASTSizeCostModel
 
 
@@ -16,7 +16,7 @@ def main():
 
     rules = [mul_assoc, mul_div]
     while not egraph.is_saturated():
-        egraph.apply_rules(rules)
+        Rule.apply_rules(rules, egraph)
 
     extracted = MinimumCostExtractor().extract(
         ASTSizeCostModel(), egraph, egraph.root,

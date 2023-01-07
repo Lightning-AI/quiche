@@ -1,5 +1,5 @@
 from quiche.pyast import ASTQuicheTree
-from quiche import EGraph
+from quiche import EGraph, Rule
 
 ## Construction
 quiche_tree = ASTQuicheTree("newton_sqrt.py")
@@ -26,7 +26,7 @@ rewrite = ASTQuicheTree.make_rule(
   "while 1:\n\t__quiche__body"
 )
 
-egraph.apply_rules([rewrite])
+Rule.apply_rules([rewrite], egraph)
 
 
 ## Term extraction again
