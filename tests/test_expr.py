@@ -1,7 +1,7 @@
 from quiche import EGraph, MinimumCostExtractor, Rule
 
-from util import verify_egraph_shape  # , print_egraph
-from expr_lang import ExprNode, ExprNodeCost, ExprTree
+from .util import verify_egraph_shape  # , print_egraph
+from .expr_lang import ExprNode, ExprNodeCost, ExprTree
 
 
 def exp(fn):
